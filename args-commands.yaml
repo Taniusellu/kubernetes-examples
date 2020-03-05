@@ -1,0 +1,86 @@
+---
+#args or command are under the spec>containers-name-image-command/args
+kind: Pod
+metadata:
+  creationTimestamp: "2020-03-05T05:10:31Z"
+  labels:
+    run: webapp-green
+  name: webapp-green
+  namespace: default
+  resourceVersion: "2118"
+  selfLink: /api/v1/namespaces/default/pods/webapp-green
+  uid: 3a10c359-7cfa-4ea8-8ba3-cbcbb570c8b1
+spec:
+  containers:
+  - image: kodekloud/webapp-color
+    imagePullPolicy: Always
+    name: webapp-green
+    args: ["--color","green"]
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-b4zfb
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: node01
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: default-token-b4zfb
+    secret:
+      defaultMode: 420
+      secretName: default-token-b4zfb
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2020-03-05T05:10:31Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2020-03-05T05:10:41Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2020-03-05T05:10:41Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2020-03-05T05:10:31Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://b8585fad14380d7dd737621e6c1e9b4c94f69aba3ef99f290eda7d09a6738502
+    image: kodekloud/webapp-color:latest
+    imageID: docker-pullable://kodekloud/webapp-color@sha256:99c3821ea49b89c7a22d3eebab5c2e1ec651452e7675af243485034a72eb1423
+    lastState: {}
+    name: webapp-green
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2020-03-05T05:10:40Z"
+  hostIP: 172.17.0.62
+  phase: Running
+  podIP: 10.44.0.4
+  podIPs:
+  - ip: 10.44.0.4
+  qosClass: BestEffort
+  startTime: "2020-03-05T05:10:31Z"
