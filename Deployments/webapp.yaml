@@ -9,7 +9,6 @@ metadata:
     app: webapp
   name: webapp
   namespace: default
-  resourceVersion: "1585"
   selfLink: /apis/apps/v1/namespaces/default/deployments/webapp
   uid: a6893192-98ea-4a6f-9096-4a25797b80cf
 spec:
